@@ -2,12 +2,11 @@
 
 import pygame
 from plane_sprites import *
-
+# 开始喽
 # 敌机出现事件
 CREATE_ENEMY_EVENT = pygame.USEREVENT
 # 发射子弹事件
 HERO_FIRE_EVENT = pygame.USEREVENT + 1
-
 
 class PlaneGame:
     """飞机大战游戏类"""
@@ -127,3 +126,7 @@ class PlaneGame:
 
 if __name__ == '__main__':
     PlaneGame().start_game()
+
+
+
+

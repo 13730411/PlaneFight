@@ -26,7 +26,6 @@ class GameSprite(pygame.sprite.Sprite):
 
         return names
 
-
 class Background(GameSprite):
     """背景精灵"""
 
