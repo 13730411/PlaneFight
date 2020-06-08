@@ -28,6 +28,8 @@ from settings import Settings
 from ship import Ship
 # 定义一个窗口函数，可以显示一个主窗口
 import game_function as gf
+# 创建一个可以存放子弹的编组
+from pygame.sprite import Group
 def run_game():
     # 首先pygame初始化
     pygame.init()
@@ -36,6 +38,7 @@ def run_game():
     screen = pygame.display.set_mode((av_setting.width,av_setting.height))
     pygame.display.set_caption("外星人入侵游戏...")
     my_ship = Ship(screen,av_setting)
+    bullets =  Group()
     # 使用一个死循环，开始刷新显示屏幕
     while True:
         # 在一个死循环中，一定要设置一个中断条件，从而可以在某种情况下，跳出循环。本程序就是通过pygame的
@@ -45,8 +48,10 @@ def run_game():
         # 事件类型与pygame的QUIT一致，则退出显示窗口
         # if event.type == pygame.QUIT:
         #    sys.exit()
-        gf.check_events(my_ship)
+
+        gf.check_events(my_ship,av_setting,screen,bullets)
         my_ship.update()
-        gf.update_screen(av_setting,screen,my_ship)
+        bullets.update()
+        gf.update_screen(av_setting,screen,my_ship,bullets)
 run_game()
 

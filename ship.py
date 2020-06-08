@@ -25,7 +25,7 @@ class Ship:
             self.ship_center += self.ship_setting.ship_move_speed
         if self.move_left_flag and (self.ship_image_rect.left > 0):
             self.ship_center -= self.ship_setting.ship_move_speed
-        if self.move_up_flag and (self.ship_image_rect.bottom > 0):
+        if self.move_up_flag and (self.ship_image_rect.top> 0):
             self.ship_bottom -= self.ship_setting.ship_move_speed
         if self.move_down_flag and (self.ship_image_rect.bottom < self.screen_rect.bottom):
             self.ship_bottom += self.ship_setting.ship_move_speed
